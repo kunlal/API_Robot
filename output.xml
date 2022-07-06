@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220706 08:21:42.916" rpa="false" schemaversion="3">
+<suite id="s1" name="Feature" source="C:\Users\kundan\PycharmProjects\Robot_Test\feature.robot">
+<test id="s1-t1" name="TestCase001: Verify response has pagination" line="14">
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${BaseUrl}/public/v2/users/</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220706 08:21:46.278" level="INFO">GET Request : url=https://gorest.co.in/public/v2/users/ 
+ path_url=/public/v2/users/ 
+ headers={'User-Agent': 'python-requests/2.28.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220706 08:21:46.278" level="INFO">GET Response : url=https://gorest.co.in/public/v2/users/ 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Wed, 06 Jul 2022 02:51:45 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding, Origin', 'X-Frame-Options': 'SAMEORIGIN', 'X-XSS-Protection': '0', 'X-Content-Type-Options': 'nosniff', 'X-Download-Options': 'noopen', 'X-Permitted-Cross-Domain-Policies': 'none', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'X-Pagination-Total': '3284', 'X-Pagination-Pages': '165', 'X-Pagination-Page': '1', 'X-Pagination-Limit': '20', 'X-Links-Previous': '', 'X-Links-Current': 'https://gorest.co.in/public/v2/users?page=1', 'X-Links-Next': 'https://gorest.co.in/public/v2/users?page=2', 'ETag': 'W/"988f552f0c106df9b6d343653d6268c4"', 'Cache-Control': 'max-age=0, private, must-revalidate', 'X-Request-Id': '0f2e60c5-2ce3-4454-9cb3-74750d461178', 'X-Runtime': '0.008996', 'Strict-Transport-Security': 'max-age=63072000; includeSubDomains', 'Content-Encoding': 'gzip'} 
+ body=[{"id":3325,"name":"Ekaksh Singh","email":"singh_ekaksh@kassulke-mills.info","gender":"male","status":"active"},{"id":3324,"name":"Chidambaram Pilla","email":"pilla_chidambaram@marquardt.info","gender":"male","status":"active"},{"id":3323,"name":"Gemine Varma","email":"varma_gemine@volkman.info","gender":"male","status":"active"},{"id":3322,"name":"Mani Mukhopadhyay","email":"mani_mukhopadhyay@reilly.co","gender":"male","status":"inactive"},{"id":3321,"name":"Miss Deb Varman","email":"deb_miss_varman@friesen-heaney.net","gender":"male","status":"inactive"},{"id":3320,"name":"Amb. Devi Kaur","email":"kaur_devi_amb@huels-muller.info","gender":"female","status":"inactive"},{"id":3319,"name":"Ekaaksh Jain","email":"jain_ekaaksh@hills-toy.co","gender":"male","status":"inactive"},{"id":3318,"name":"Bhooshan Naik","email":"naik_bhooshan@gorczany-corwin.info","gender":"male","status":"inactive"},{"id":3317,"name":"The Hon. Chakradhar Jain","email":"the_jain_chakradhar_hon@muller.com","gender":"male","status":"inactive"},{"id":3316,"name":"Gandharva Trivedi Jr.","email":"trivedi_jr_gandharva@bednar-feest.net","gender":"female","status":"inactive"},{"id":3315,"name":"Gov. Bhaasvan Namboothiri","email":"namboothiri_gov_bhaasvan@smitham.net","gender":"male","status":"inactive"},{"id":3314,"name":"Bhagwati Bharadwaj Jr.","email":"bharadwaj_bhagwati_jr@turcotte-schumm.org","gender":"female","status":"active"},{"id":3313,"name":"Anasuya Abbott","email":"anasuya_abbott@auer.co","gender":"male","status":"inactive"},{"id":3312,"name":"Niranjan Bhattacharya","email":"niranjan_bhattacharya@rutherford.biz","gender":"male","status":"active"},{"id":3311,"name":"Veda Agarwal","email":"veda_agarwal@mante-bednar.com","gender":"male","status":"active"},{"id":3310,"name":"Trilochan Gupta","email":"gupta_trilochan@stokes-ferry.name","gender":"male","status":"inactive"},{"id":3309,"name":"Ananta Malik","email":"malik_ananta@wisoky.com","gender":"male","status":"inactive"},{"id":3308,"name":"Ms. Smriti Shukla","email":"ms_smriti_shukla@schumm.io","gender":"female","status":"inactive"},{"id":3307,"name":"Vaishnavi Varman","email":"vaishnavi_varman@wuckert.co","gender":"female","status":"inactive"},{"id":3306,"name":"Dhanesh Menon","email":"dhanesh_menon@ward.net","gender":"female","status":"inactive"}] 
+ </msg>
+<msg timestamp="20220706 08:21:46.278" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220706 08:21:43.074" endtime="20220706 08:21:46.278"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${response_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20220706 08:21:46.278" level="INFO">${response_code} = 200</msg>
+<status status="PASS" starttime="20220706 08:21:46.278" endtime="20220706 08:21:46.278"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${response_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220706 08:21:46.278" endtime="20220706 08:21:46.278"/>
+</kw>
+<kw name="Verify response has pagination" library="base_functions">
+<var>${get_response}</var>
+<arg>${response}</arg>
+<msg timestamp="20220706 08:21:46.278" level="INFO">${get_response} = True</msg>
+<status status="PASS" starttime="20220706 08:21:46.278" endtime="20220706 08:21:46.278"/>
+</kw>
+<kw name="Log Many" library="BuiltIn">
+<arg>${get_response}</arg>
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<msg timestamp="20220706 08:21:46.278" level="INFO">True</msg>
+<status status="PASS" starttime="20220706 08:21:46.278" endtime="20220706 08:21:46.278"/>
+</kw>
+<if>
+<branch type="IF" condition="${get_response} == True">
+<kw name="Log Many" library="BuiltIn">
+<arg>pagination found</arg>
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<msg timestamp="20220706 08:21:46.278" level="INFO">pagination found</msg>
+<status status="PASS" starttime="20220706 08:21:46.278" endtime="20220706 08:21:46.278"/>
+</kw>
+<status status="PASS" starttime="20220706 08:21:46.278" endtime="20220706 08:21:46.278"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log Many" library="BuiltIn">
+<arg>pagination not found</arg>
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<status status="NOT RUN" starttime="20220706 08:21:46.278" endtime="20220706 08:21:46.278"/>
+</kw>
+<status status="NOT RUN" starttime="20220706 08:21:46.278" endtime="20220706 08:21:46.278"/>
+</branch>
+<status status="PASS" starttime="20220706 08:21:46.278" endtime="20220706 08:21:46.278"/>
+</if>
+<tag>Sanity</tag>
+<status status="PASS" starttime="20220706 08:21:43.074" endtime="20220706 08:21:46.278"/>
+</test>
+<test id="s1-t2" name="TestCase002: Validate Json Data" line="28">
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${BaseUrl}/public/v2/users/</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220706 08:21:46.549" level="INFO">GET Request : url=https://gorest.co.in/public/v2/users/ 
+ path_url=/public/v2/users/ 
+ headers={'User-Agent': 'python-requests/2.28.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220706 08:21:46.549" level="INFO">GET Response : url=https://gorest.co.in/public/v2/users/ 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Wed, 06 Jul 2022 02:51:45 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding, Origin', 'X-Frame-Options': 'SAMEORIGIN', 'X-XSS-Protection': '0', 'X-Content-Type-Options': 'nosniff', 'X-Download-Options': 'noopen', 'X-Permitted-Cross-Domain-Policies': 'none', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'X-Pagination-Total': '3284', 'X-Pagination-Pages': '165', 'X-Pagination-Page': '1', 'X-Pagination-Limit': '20', 'X-Links-Previous': '', 'X-Links-Current': 'https://gorest.co.in/public/v2/users?page=1', 'X-Links-Next': 'https://gorest.co.in/public/v2/users?page=2', 'ETag': 'W/"988f552f0c106df9b6d343653d6268c4"', 'Cache-Control': 'max-age=0, private, must-revalidate', 'X-Request-Id': '1537b393-d45a-46bb-adac-22deace82552', 'X-Runtime': '0.007022', 'Strict-Transport-Security': 'max-age=63072000; includeSubDomains', 'Content-Encoding': 'gzip'} 
+ body=[{"id":3325,"name":"Ekaksh Singh","email":"singh_ekaksh@kassulke-mills.info","gender":"male","status":"active"},{"id":3324,"name":"Chidambaram Pilla","email":"pilla_chidambaram@marquardt.info","gender":"male","status":"active"},{"id":3323,"name":"Gemine Varma","email":"varma_gemine@volkman.info","gender":"male","status":"active"},{"id":3322,"name":"Mani Mukhopadhyay","email":"mani_mukhopadhyay@reilly.co","gender":"male","status":"inactive"},{"id":3321,"name":"Miss Deb Varman","email":"deb_miss_varman@friesen-heaney.net","gender":"male","status":"inactive"},{"id":3320,"name":"Amb. Devi Kaur","email":"kaur_devi_amb@huels-muller.info","gender":"female","status":"inactive"},{"id":3319,"name":"Ekaaksh Jain","email":"jain_ekaaksh@hills-toy.co","gender":"male","status":"inactive"},{"id":3318,"name":"Bhooshan Naik","email":"naik_bhooshan@gorczany-corwin.info","gender":"male","status":"inactive"},{"id":3317,"name":"The Hon. Chakradhar Jain","email":"the_jain_chakradhar_hon@muller.com","gender":"male","status":"inactive"},{"id":3316,"name":"Gandharva Trivedi Jr.","email":"trivedi_jr_gandharva@bednar-feest.net","gender":"female","status":"inactive"},{"id":3315,"name":"Gov. Bhaasvan Namboothiri","email":"namboothiri_gov_bhaasvan@smitham.net","gender":"male","status":"inactive"},{"id":3314,"name":"Bhagwati Bharadwaj Jr.","email":"bharadwaj_bhagwati_jr@turcotte-schumm.org","gender":"female","status":"active"},{"id":3313,"name":"Anasuya Abbott","email":"anasuya_abbott@auer.co","gender":"male","status":"inactive"},{"id":3312,"name":"Niranjan Bhattacharya","email":"niranjan_bhattacharya@rutherford.biz","gender":"male","status":"active"},{"id":3311,"name":"Veda Agarwal","email":"veda_agarwal@mante-bednar.com","gender":"male","status":"active"},{"id":3310,"name":"Trilochan Gupta","email":"gupta_trilochan@stokes-ferry.name","gender":"male","status":"inactive"},{"id":3309,"name":"Ananta Malik","email":"malik_ananta@wisoky.com","gender":"male","status":"inactive"},{"id":3308,"name":"Ms. Smriti Shukla","email":"ms_smriti_shukla@schumm.io","gender":"female","status":"inactive"},{"id":3307,"name":"Vaishnavi Varman","email":"vaishnavi_varman@wuckert.co","gender":"female","status":"inactive"},{"id":3306,"name":"Dhanesh Menon","email":"dhanesh_menon@ward.net","gender":"female","status":"inactive"}] 
+ </msg>
+<msg timestamp="20220706 08:21:46.549" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220706 08:21:46.293" endtime="20220706 08:21:46.549"/>
+</kw>
+<kw name="Verify response jsonData" library="base_functions">
+<var>${get_response}</var>
+<arg>${response}</arg>
+<doc>:param response:
+:return:</doc>
+<msg timestamp="20220706 08:21:46.596" level="INFO">${get_response} = True</msg>
+<status status="PASS" starttime="20220706 08:21:46.549" endtime="20220706 08:21:46.596"/>
+</kw>
+<if>
+<branch type="IF" condition="${get_response} == True">
+<kw name="Log Many" library="BuiltIn">
+<arg>Valid Json Data</arg>
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<msg timestamp="20220706 08:21:46.596" level="INFO">Valid Json Data</msg>
+<status status="PASS" starttime="20220706 08:21:46.596" endtime="20220706 08:21:46.596"/>
+</kw>
+<status status="PASS" starttime="20220706 08:21:46.596" endtime="20220706 08:21:46.596"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log Many" library="BuiltIn">
+<arg>InValid Json Data</arg>
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<status status="NOT RUN" starttime="20220706 08:21:46.596" endtime="20220706 08:21:46.596"/>
+</kw>
+<status status="NOT RUN" starttime="20220706 08:21:46.596" endtime="20220706 08:21:46.596"/>
+</branch>
+<status status="PASS" starttime="20220706 08:21:46.596" endtime="20220706 08:21:46.596"/>
+</if>
+<doc>"JSON Schema Validation"</doc>
+<tag>Sanity</tag>
+<status status="PASS" starttime="20220706 08:21:46.293" endtime="20220706 08:21:46.596"/>
+</test>
+<test id="s1-t3" name="TestCase003: Verify Response Data has email address" line="39">
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${BaseUrl}/public/v2/users/</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220706 08:21:49.834" level="INFO">GET Request : url=https://gorest.co.in/public/v2/users/ 
+ path_url=/public/v2/users/ 
+ headers={'User-Agent': 'python-requests/2.28.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220706 08:21:49.834" level="INFO">GET Response : url=https://gorest.co.in/public/v2/users/ 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Wed, 06 Jul 2022 02:51:49 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding, Origin', 'X-Frame-Options': 'SAMEORIGIN', 'X-XSS-Protection': '0', 'X-Content-Type-Options': 'nosniff', 'X-Download-Options': 'noopen', 'X-Permitted-Cross-Domain-Policies': 'none', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'X-Pagination-Total': '3284', 'X-Pagination-Pages': '165', 'X-Pagination-Page': '1', 'X-Pagination-Limit': '20', 'X-Links-Previous': '', 'X-Links-Current': 'https://gorest.co.in/public/v2/users?page=1', 'X-Links-Next': 'https://gorest.co.in/public/v2/users?page=2', 'ETag': 'W/"988f552f0c106df9b6d343653d6268c4"', 'Cache-Control': 'max-age=0, private, must-revalidate', 'X-Request-Id': '8e798f4a-84ee-43aa-9f90-75e9835e471b', 'X-Runtime': '0.007135', 'Strict-Transport-Security': 'max-age=63072000; includeSubDomains', 'Content-Encoding': 'gzip'} 
+ body=[{"id":3325,"name":"Ekaksh Singh","email":"singh_ekaksh@kassulke-mills.info","gender":"male","status":"active"},{"id":3324,"name":"Chidambaram Pilla","email":"pilla_chidambaram@marquardt.info","gender":"male","status":"active"},{"id":3323,"name":"Gemine Varma","email":"varma_gemine@volkman.info","gender":"male","status":"active"},{"id":3322,"name":"Mani Mukhopadhyay","email":"mani_mukhopadhyay@reilly.co","gender":"male","status":"inactive"},{"id":3321,"name":"Miss Deb Varman","email":"deb_miss_varman@friesen-heaney.net","gender":"male","status":"inactive"},{"id":3320,"name":"Amb. Devi Kaur","email":"kaur_devi_amb@huels-muller.info","gender":"female","status":"inactive"},{"id":3319,"name":"Ekaaksh Jain","email":"jain_ekaaksh@hills-toy.co","gender":"male","status":"inactive"},{"id":3318,"name":"Bhooshan Naik","email":"naik_bhooshan@gorczany-corwin.info","gender":"male","status":"inactive"},{"id":3317,"name":"The Hon. Chakradhar Jain","email":"the_jain_chakradhar_hon@muller.com","gender":"male","status":"inactive"},{"id":3316,"name":"Gandharva Trivedi Jr.","email":"trivedi_jr_gandharva@bednar-feest.net","gender":"female","status":"inactive"},{"id":3315,"name":"Gov. Bhaasvan Namboothiri","email":"namboothiri_gov_bhaasvan@smitham.net","gender":"male","status":"inactive"},{"id":3314,"name":"Bhagwati Bharadwaj Jr.","email":"bharadwaj_bhagwati_jr@turcotte-schumm.org","gender":"female","status":"active"},{"id":3313,"name":"Anasuya Abbott","email":"anasuya_abbott@auer.co","gender":"male","status":"inactive"},{"id":3312,"name":"Niranjan Bhattacharya","email":"niranjan_bhattacharya@rutherford.biz","gender":"male","status":"active"},{"id":3311,"name":"Veda Agarwal","email":"veda_agarwal@mante-bednar.com","gender":"male","status":"active"},{"id":3310,"name":"Trilochan Gupta","email":"gupta_trilochan@stokes-ferry.name","gender":"male","status":"inactive"},{"id":3309,"name":"Ananta Malik","email":"malik_ananta@wisoky.com","gender":"male","status":"inactive"},{"id":3308,"name":"Ms. Smriti Shukla","email":"ms_smriti_shukla@schumm.io","gender":"female","status":"inactive"},{"id":3307,"name":"Vaishnavi Varman","email":"vaishnavi_varman@wuckert.co","gender":"female","status":"inactive"},{"id":3306,"name":"Dhanesh Menon","email":"dhanesh_menon@ward.net","gender":"female","status":"inactive"}] 
+ </msg>
+<msg timestamp="20220706 08:21:49.850" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220706 08:21:46.596" endtime="20220706 08:21:49.850"/>
+</kw>
+<kw name="To Json" library="RequestsLibrary">
+<var>${json_object}</var>
+<arg>${response.content}</arg>
+<doc>*DEPRECATED* Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</doc>
+<msg timestamp="20220706 08:21:49.850" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg timestamp="20220706 08:21:49.850" level="INFO">To JSON using : content=[{"id":3325,"name":"Ekaksh Singh","email":"singh_ekaksh@kassulke-mills.info","gender":"male","status":"active"},{"id":3324,"name":"Chidambaram Pilla","email":"pilla_chidambaram@marquardt.info","gender":"male","status":"active"},{"id":3323,"name":"Gemine Varma","email":"varma_gemine@volkman.info","gender":"male","status":"active"},{"id":3322,"name":"Mani Mukhopadhyay","email":"mani_mukhopadhyay@reilly.co","gender":"male","status":"inactive"},{"id":3321,"name":"Miss Deb Varman","email":"deb_miss_varman@friesen-heaney.net","gender":"male","status":"inactive"},{"id":3320,"name":"Amb. Devi Kaur","email":"kaur_devi_amb@huels-muller.info","gender":"female","status":"inactive"},{"id":3319,"name":"Ekaaksh Jain","email":"jain_ekaaksh@hills-toy.co","gender":"male","status":"inactive"},{"id":3318,"name":"Bhooshan Naik","email":"naik_bhooshan@gorczany-corwin.info","gender":"male","status":"inactive"},{"id":3317,"name":"The Hon. Chakradhar Jain","email":"the_jain_chakradhar_hon@muller.com","gender":"male","status":"inactive"},{"id":3316,"name":"Gandharva Trivedi Jr.","email":"trivedi_jr_gandharva@bednar-feest.net","gender":"female","status":"inactive"},{"id":3315,"name":"Gov. Bhaasvan Namboothiri","email":"namboothiri_gov_bhaasvan@smitham.net","gender":"male","status":"inactive"},{"id":3314,"name":"Bhagwati Bharadwaj Jr.","email":"bharadwaj_bhagwati_jr@turcotte-schumm.org","gender":"female","status":"active"},{"id":3313,"name":"Anasuya Abbott","email":"anasuya_abbott@auer.co","gender":"male","status":"inactive"},{"id":3312,"name":"Niranjan Bhattacharya","email":"niranjan_bhattacharya@rutherford.biz","gender":"male","status":"active"},{"id":3311,"name":"Veda Agarwal","email":"veda_agarwal@mante-bednar.com","gender":"male","status":"active"},{"id":3310,"name":"Trilochan Gupta","email":"gupta_trilochan@stokes-ferry.name","gender":"male","status":"inactive"},{"id":3309,"name":"Ananta Malik","email":"malik_ananta@wisoky.com","gender":"male","status":"inactive"},{"id":3308,"name":"Ms. Smriti Shukla","email":"ms_smriti_shukla@schumm.io","gender":"female","status":"inactive"},{"id":3307,"name":"Vaishnavi Varman","email":"vaishnavi_varman@wuckert.co","gender":"female","status":"inactive"},{"id":3306,"name":"Dhanesh Menon","email":"dhanesh_menon@ward.net","gender":"female","status":"inactive"}] </msg>
+<msg timestamp="20220706 08:21:49.850" level="INFO">To JSON using : pretty_print=False </msg>
+<msg timestamp="20220706 08:21:49.850" level="INFO">${json_object} = [{'id': 3325, 'name': 'Ekaksh Singh', 'email': 'singh_ekaksh@kassulke-mills.info', 'gender': 'male', 'status': 'active'}, {'id': 3324, 'name': 'Chidambaram Pilla', 'email': 'pilla_chidambaram@marquard...</msg>
+<status status="PASS" starttime="20220706 08:21:49.850" endtime="20220706 08:21:49.850"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${json_object}[0]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220706 08:21:49.850" endtime="20220706 08:21:49.850"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${keys}</var>
+<arg>${json_object[0].keys()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220706 08:21:49.850" level="INFO">${keys} = dict_keys(['id', 'name', 'email', 'gender', 'status'])</msg>
+<status status="PASS" starttime="20220706 08:21:49.850" endtime="20220706 08:21:49.850"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${keys}</arg>
+<arg>email</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220706 08:21:49.850" endtime="20220706 08:21:49.850"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${get_anymail}</var>
+<arg>${json_object[0]}[email]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220706 08:21:49.850" level="INFO">${get_anymail} = singh_ekaksh@kassulke-mills.info</msg>
+<status status="PASS" starttime="20220706 08:21:49.850" endtime="20220706 08:21:49.850"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${get_anymail}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220706 08:21:49.850" endtime="20220706 08:21:49.850"/>
+</kw>
+<doc>Test to Verify Response Data has email address</doc>
+<tag>SRG</tag>
+<status status="PASS" starttime="20220706 08:21:46.596" endtime="20220706 08:21:49.850"/>
+</test>
+<test id="s1-t4" name="TestCase004: Verify all entries on list data have similar attributes" line="51">
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${BaseUrl}/public/v2/users/</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220706 08:21:50.149" level="INFO">GET Request : url=https://gorest.co.in/public/v2/users/ 
+ path_url=/public/v2/users/ 
+ headers={'User-Agent': 'python-requests/2.28.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220706 08:21:50.149" level="INFO">GET Response : url=https://gorest.co.in/public/v2/users/ 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Wed, 06 Jul 2022 02:51:49 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding, Origin', 'X-Frame-Options': 'SAMEORIGIN', 'X-XSS-Protection': '0', 'X-Content-Type-Options': 'nosniff', 'X-Download-Options': 'noopen', 'X-Permitted-Cross-Domain-Policies': 'none', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'X-Pagination-Total': '3284', 'X-Pagination-Pages': '165', 'X-Pagination-Page': '1', 'X-Pagination-Limit': '20', 'X-Links-Previous': '', 'X-Links-Current': 'https://gorest.co.in/public/v2/users?page=1', 'X-Links-Next': 'https://gorest.co.in/public/v2/users?page=2', 'ETag': 'W/"988f552f0c106df9b6d343653d6268c4"', 'Cache-Control': 'max-age=0, private, must-revalidate', 'X-Request-Id': '06a906c2-48db-4df8-a8ad-67a0a095583f', 'X-Runtime': '0.007047', 'Strict-Transport-Security': 'max-age=63072000; includeSubDomains', 'Content-Encoding': 'gzip'} 
+ body=[{"id":3325,"name":"Ekaksh Singh","email":"singh_ekaksh@kassulke-mills.info","gender":"male","status":"active"},{"id":3324,"name":"Chidambaram Pilla","email":"pilla_chidambaram@marquardt.info","gender":"male","status":"active"},{"id":3323,"name":"Gemine Varma","email":"varma_gemine@volkman.info","gender":"male","status":"active"},{"id":3322,"name":"Mani Mukhopadhyay","email":"mani_mukhopadhyay@reilly.co","gender":"male","status":"inactive"},{"id":3321,"name":"Miss Deb Varman","email":"deb_miss_varman@friesen-heaney.net","gender":"male","status":"inactive"},{"id":3320,"name":"Amb. Devi Kaur","email":"kaur_devi_amb@huels-muller.info","gender":"female","status":"inactive"},{"id":3319,"name":"Ekaaksh Jain","email":"jain_ekaaksh@hills-toy.co","gender":"male","status":"inactive"},{"id":3318,"name":"Bhooshan Naik","email":"naik_bhooshan@gorczany-corwin.info","gender":"male","status":"inactive"},{"id":3317,"name":"The Hon. Chakradhar Jain","email":"the_jain_chakradhar_hon@muller.com","gender":"male","status":"inactive"},{"id":3316,"name":"Gandharva Trivedi Jr.","email":"trivedi_jr_gandharva@bednar-feest.net","gender":"female","status":"inactive"},{"id":3315,"name":"Gov. Bhaasvan Namboothiri","email":"namboothiri_gov_bhaasvan@smitham.net","gender":"male","status":"inactive"},{"id":3314,"name":"Bhagwati Bharadwaj Jr.","email":"bharadwaj_bhagwati_jr@turcotte-schumm.org","gender":"female","status":"active"},{"id":3313,"name":"Anasuya Abbott","email":"anasuya_abbott@auer.co","gender":"male","status":"inactive"},{"id":3312,"name":"Niranjan Bhattacharya","email":"niranjan_bhattacharya@rutherford.biz","gender":"male","status":"active"},{"id":3311,"name":"Veda Agarwal","email":"veda_agarwal@mante-bednar.com","gender":"male","status":"active"},{"id":3310,"name":"Trilochan Gupta","email":"gupta_trilochan@stokes-ferry.name","gender":"male","status":"inactive"},{"id":3309,"name":"Ananta Malik","email":"malik_ananta@wisoky.com","gender":"male","status":"inactive"},{"id":3308,"name":"Ms. Smriti Shukla","email":"ms_smriti_shukla@schumm.io","gender":"female","status":"inactive"},{"id":3307,"name":"Vaishnavi Varman","email":"vaishnavi_varman@wuckert.co","gender":"female","status":"inactive"},{"id":3306,"name":"Dhanesh Menon","email":"dhanesh_menon@ward.net","gender":"female","status":"inactive"}] 
+ </msg>
+<msg timestamp="20220706 08:21:50.149" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220706 08:21:49.866" endtime="20220706 08:21:50.149"/>
+</kw>
+<kw name="Verify json attributes" library="base_functions">
+<var>${attributesdata}</var>
+<arg>${response}</arg>
+<doc>:param response:
+:return:</doc>
+<msg timestamp="20220706 08:21:50.149" level="FAIL">Error in content, pattern mismatch! at doc index 0:</msg>
+<status status="FAIL" starttime="20220706 08:21:50.149" endtime="20220706 08:21:50.230"/>
+</kw>
+<doc>field type and regular expression</doc>
+<tag>SRG</tag>
+<status status="FAIL" starttime="20220706 08:21:49.866" endtime="20220706 08:21:50.230">Error in content, pattern mismatch! at doc index 0:</status>
+</test>
+<test id="s1-t5" name="TestCase005: Verify HTTP response codes" line="59">
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${BaseUrl}/public/v2/users/</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220706 08:21:50.543" level="INFO">GET Request : url=https://gorest.co.in/public/v2/users/ 
+ path_url=/public/v2/users/ 
+ headers={'User-Agent': 'python-requests/2.28.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220706 08:21:50.543" level="INFO">GET Response : url=https://gorest.co.in/public/v2/users/ 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Wed, 06 Jul 2022 02:51:49 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding, Origin', 'X-Frame-Options': 'SAMEORIGIN', 'X-XSS-Protection': '0', 'X-Content-Type-Options': 'nosniff', 'X-Download-Options': 'noopen', 'X-Permitted-Cross-Domain-Policies': 'none', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'X-Pagination-Total': '3284', 'X-Pagination-Pages': '165', 'X-Pagination-Page': '1', 'X-Pagination-Limit': '20', 'X-Links-Previous': '', 'X-Links-Current': 'https://gorest.co.in/public/v2/users?page=1', 'X-Links-Next': 'https://gorest.co.in/public/v2/users?page=2', 'ETag': 'W/"988f552f0c106df9b6d343653d6268c4"', 'Cache-Control': 'max-age=0, private, must-revalidate', 'X-Request-Id': 'b486676e-7ac6-4dde-80b2-5ac389ebffd5', 'X-Runtime': '0.006877', 'Strict-Transport-Security': 'max-age=63072000; includeSubDomains', 'Content-Encoding': 'gzip'} 
+ body=[{"id":3325,"name":"Ekaksh Singh","email":"singh_ekaksh@kassulke-mills.info","gender":"male","status":"active"},{"id":3324,"name":"Chidambaram Pilla","email":"pilla_chidambaram@marquardt.info","gender":"male","status":"active"},{"id":3323,"name":"Gemine Varma","email":"varma_gemine@volkman.info","gender":"male","status":"active"},{"id":3322,"name":"Mani Mukhopadhyay","email":"mani_mukhopadhyay@reilly.co","gender":"male","status":"inactive"},{"id":3321,"name":"Miss Deb Varman","email":"deb_miss_varman@friesen-heaney.net","gender":"male","status":"inactive"},{"id":3320,"name":"Amb. Devi Kaur","email":"kaur_devi_amb@huels-muller.info","gender":"female","status":"inactive"},{"id":3319,"name":"Ekaaksh Jain","email":"jain_ekaaksh@hills-toy.co","gender":"male","status":"inactive"},{"id":3318,"name":"Bhooshan Naik","email":"naik_bhooshan@gorczany-corwin.info","gender":"male","status":"inactive"},{"id":3317,"name":"The Hon. Chakradhar Jain","email":"the_jain_chakradhar_hon@muller.com","gender":"male","status":"inactive"},{"id":3316,"name":"Gandharva Trivedi Jr.","email":"trivedi_jr_gandharva@bednar-feest.net","gender":"female","status":"inactive"},{"id":3315,"name":"Gov. Bhaasvan Namboothiri","email":"namboothiri_gov_bhaasvan@smitham.net","gender":"male","status":"inactive"},{"id":3314,"name":"Bhagwati Bharadwaj Jr.","email":"bharadwaj_bhagwati_jr@turcotte-schumm.org","gender":"female","status":"active"},{"id":3313,"name":"Anasuya Abbott","email":"anasuya_abbott@auer.co","gender":"male","status":"inactive"},{"id":3312,"name":"Niranjan Bhattacharya","email":"niranjan_bhattacharya@rutherford.biz","gender":"male","status":"active"},{"id":3311,"name":"Veda Agarwal","email":"veda_agarwal@mante-bednar.com","gender":"male","status":"active"},{"id":3310,"name":"Trilochan Gupta","email":"gupta_trilochan@stokes-ferry.name","gender":"male","status":"inactive"},{"id":3309,"name":"Ananta Malik","email":"malik_ananta@wisoky.com","gender":"male","status":"inactive"},{"id":3308,"name":"Ms. Smriti Shukla","email":"ms_smriti_shukla@schumm.io","gender":"female","status":"inactive"},{"id":3307,"name":"Vaishnavi Varman","email":"vaishnavi_varman@wuckert.co","gender":"female","status":"inactive"},{"id":3306,"name":"Dhanesh Menon","email":"dhanesh_menon@ward.net","gender":"female","status":"inactive"}] 
+ </msg>
+<msg timestamp="20220706 08:21:50.543" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220706 08:21:50.234" endtime="20220706 08:21:50.543"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${response_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20220706 08:21:50.543" level="INFO">${response_code} = 200</msg>
+<status status="PASS" starttime="20220706 08:21:50.543" endtime="20220706 08:21:50.543"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${response_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220706 08:21:50.543" endtime="20220706 08:21:50.543"/>
+</kw>
+<status status="PASS" starttime="20220706 08:21:50.234" endtime="20220706 08:21:50.543"/>
+</test>
+<status status="FAIL" starttime="20220706 08:21:42.916" endtime="20220706 08:21:50.559"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">Sanity</stat>
+<stat pass="1" fail="1" skip="0">SRG</stat>
+</tag>
+<suite>
+<stat pass="4" fail="1" skip="0" id="s1" name="Feature">Feature</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220706 08:21:49.850" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+</errors>
+</robot>

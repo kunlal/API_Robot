@@ -1,0 +1,31 @@
+{
+
+  "title": "Employee",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "The employee ID"
+    },
+    "name": {
+      "type": "string",
+      "description": "The person's name."
+    },
+    "email": {
+      "description": "The person email",
+      "type": "string",
+      "minimum": 0
+    },
+    "gender": {
+      "description": "The person gender",
+      "type": "string"
+
+    },
+    "status": {
+      "description": "Age in years which must be equal to or greater than zero.",
+      "type": "string"
+
+    }
+  }
+}
+
